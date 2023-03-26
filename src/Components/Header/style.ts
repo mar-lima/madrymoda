@@ -1,15 +1,43 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-    width: 100%;
-    height: 80px;
-    background-color: ${props=> props.theme.colors.black};
-    color: ${props=> props.theme.colors.white};
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out .4s;
+  .logo {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    box-shadow: 2px 1px 8px 1px #fff,
-    2px 4px 6px 6px #000;
-    
+    width: 50px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 4px 2px #d1345b, 0px 0px 3px 1px #fff;
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+`;
+
+export const Menu = styled.ul`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ list-style: none;
+ 
+ li a{
+  font-size: 20px;
+  color: ${(props) => props.theme.colors.black};
+  font-weight: bold;
+ }
 `

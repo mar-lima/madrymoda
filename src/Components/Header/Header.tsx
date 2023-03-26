@@ -1,15 +1,38 @@
-import React from 'react'
-import * as S from './style'
+import React from "react";
+import * as S from "./style";
+import logo from "../../assets/Group4.png";
+
+import { Routes } from "react-router-dom";
+import { Route } from "react-router";
+import { Link } from "react-router-dom";
+import Home from "../../pages/Home/Home";
+import About from "../../pages/About/About";
+import Catalog from "../../pages/Catalog/Catalog";
 
 const Header = () => {
   return (
     <S.Header>
-      <h4>Inicio</h4>
-      <h4>Sobre</h4>
-      <h4>Catalogo</h4>
-      <h4>Contato</h4>
+      <div className="logo">
+        <Link to="madrymoda/">
+          <img src={logo} alt="" />
+        </Link>
+      </div>
+      <S.Menu>
+        <li>
+          <Link to="madrymoda/">Inicio</Link>
+        </li>
+        <li>
+          <Link to="madrymoda/sobre">Sobre</Link>
+        </li>
+        <li>
+          <Link to="madrymoda/catalogo">Catálogo</Link>
+        </li>
+        <li>
+          <Link to="madrymoda/contato">Contato</Link>
+        </li>
+      </S.Menu>
     </S.Header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
