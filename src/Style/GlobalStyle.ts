@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    color: #fff;
+    color: ${props => props.theme.colors.black};
     margin: 0 auto;
     min-width: 320px;
     min-height: 100vh;

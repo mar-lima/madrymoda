@@ -4,10 +4,12 @@ import { DefaultTheme } from 'styled-components';
 export default {
   title: "light",
   colors: {
-    backColor: "#201a23",
-    primary: "#E54F6D",
-    secundary: "#451F55",
-    violet: "#724e91",
+    backColor: "#f9f5ff",
+    black: "#28262c",
+    primary: "#998fc7",
+    secundary: "#d4c2fc",
+    blue: "#14248a",
+    pink: "#d1345b",
   },
 };
 

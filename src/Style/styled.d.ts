@@ -4,11 +4,12 @@ declare module "styled-components" {
   export interface DefaultTheme {
     title?: string;
     colors: {
-      primary?: string;
-      secundary?: string;
-      violet?: string;
-      backColor?: string;
-      text?: string;
+      backColor: string;
+      black: string;
+      primary: string;
+      secundary: string;
+      blue: string;
+      pink: string;
     };
   }
 }
