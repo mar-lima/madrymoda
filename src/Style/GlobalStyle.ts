@@ -19,7 +19,7 @@ body {
     margin: 0 auto;
     min-width: 320px;
     min-height: 100vh;
-    background-color: ${(props) => props.theme.colors.backColor}; 
+    background-color: ${(props) => props.theme.colors.white}; 
     }
 
 `;
