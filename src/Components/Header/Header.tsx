@@ -10,6 +10,8 @@ import About from "../../pages/About/About";
 import Catalog from "../../pages/Catalog/Catalog";
 
 const Header = () => {
+
+  
   return (
     <S.Header>
       <div className="logo">
