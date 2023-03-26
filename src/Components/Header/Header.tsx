@@ -9,11 +9,11 @@ import Home from "../../pages/Home/Home";
 import About from "../../pages/About/About";
 import Catalog from "../../pages/Catalog/Catalog";
 
-const Header = () => {
+const Header = ({back}) => {
 
-  
+
   return (
-    <S.Header>
+    <S.Header className={back}>
       <div className="logo">
         <Link to="madrymoda/">
           <img src={logo} alt="" />

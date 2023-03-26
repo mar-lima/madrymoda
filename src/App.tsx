@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import * as S from "./App,styled";
 import Header from "./Components/Header/Header";
 import { Routes } from "react-router-dom";
@@ -10,9 +11,13 @@ import Catalog from "./pages/Catalog/Catalog";
 import Contact from "./pages/Contact/Contact";
 
 function App() {
+  const [backHeader, setBackHeader] = useState(false);
+
+  useEffect(() => {}, []);
+
   return (
     <S.AppContainer>
-      <Header />
+      <Header back={backHeader} />
       <S.Container>
         <h1>Inicio</h1>
         <Routes>
