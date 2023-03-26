@@ -11,6 +11,8 @@ function App() {
     
       <S.AppContainer>
         <Header/>
+
+        <h1>Inicio do projeto</h1>
       </S.AppContainer>
     
   );

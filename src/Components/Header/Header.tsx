@@ -1,8 +1,14 @@
 import React from 'react'
+import * as S from './style'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <S.Header>
+      <h4>Inicio</h4>
+      <h4>Sobre</h4>
+      <h4>Catalogo</h4>
+      <h4>Contato</h4>
+    </S.Header>
   )
 }
 
