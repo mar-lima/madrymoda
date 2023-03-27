@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
-z-index: 999;
+type headerMenu = {
+  back: boolean
+}
+
+export const Header = styled.div<headerMenu>`
+  z-index: 999;
   width: 100%;
   height: 80px;
   display: flex;
@@ -9,9 +13,10 @@ z-index: 999;
   justify-content: space-around;
   padding: 0 40px;
   position: fixed;
-  top: 0;
+  top: ${props => props.back ? '0' : '-100px'};
   left: 0;
-  transition: all ease-in-out .4s;
+  transition: all ease-in-out 0.4s;
+  /* opacity: 0; */
   .logo {
     display: flex;
     width: 50px;
@@ -34,11 +39,11 @@ export const Menu = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
- list-style: none;
- 
- li a{
-  font-size: 20px;
-  color: ${(props) => props.theme.colors.black};
-  font-weight: bold;
- }
-`
+  list-style: none;
+
+  li a {
+    font-size: 20px;
+    color: ${(props) => props.theme.colors.black};
+    font-weight: bold;
+  }
+`;

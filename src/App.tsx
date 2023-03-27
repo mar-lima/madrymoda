@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as S from "./App,styled";
 import Header from "./Components/Header/Header";
 import { Routes } from "react-router-dom";
@@ -10,14 +10,51 @@ import NotFound from "./pages/NotFound";
 import Catalog from "./pages/Catalog/Catalog";
 import Contact from "./pages/Contact/Contact";
 
-function App() {
-  const [backHeader, setBackHeader] = useState(false);
+import { RxDoubleArrowUp } from "react-icons/all";
 
-  useEffect(() => {}, []);
+function App() {
+  const appref = useRef<HTMLDivElement>(null);
+  const moveTop = useRef(null);
+  const [arrowTop, setArrowTop] = useState(false);
+  const [showIcon, setShowIcon] = useState(true);
+
+  useEffect(() => {
+    const scrolListner = () => {
+      if (window.scrollY > 0) {
+        setArrowTop((props) => (props = true));
+      }
+      if (window.scrollY === 0) {
+        setArrowTop((props) => (props = false));
+      }
+    };
+    window.addEventListener("scroll", scrolListner);
+    return () => {
+      window.removeEventListener("scroll", scrolListner);
+    };
+  }, []);
+
+  //para controllar a animaçao da flecha
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (arrowTop) {
+        setShowIcon((prev) => !prev);
+      } else {
+        setShowIcon(false);
+      }
+    }, 900);
+    return () => clearInterval(intervalId);
+  }, [arrowTop]);
+
+  //função com useref para voltar ao topo
+  const handleClickTop = () => {
+    appref.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <S.AppContainer>
-      <Header back={backHeader} />
+    <S.AppContainer id="element-top" arrow={arrowTop} ref={appref}>
+      <Header />
       <S.Container>
         <h1>Inicio</h1>
         <Routes>
@@ -32,6 +69,13 @@ function App() {
         <div className="bloco">b2</div>
         <div className="bloco">b3</div>
       </S.Container>
+      <S.Arrow
+        id="arrow"
+        arrow={arrowTop}
+        onClick={handleClickTop}
+        icon={showIcon}>
+        <RxDoubleArrowUp />
+      </S.Arrow>
     </S.AppContainer>
   );
 }

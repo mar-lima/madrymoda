@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import logo from "../../assets/Group4.png";
 
-import { Routes } from "react-router-dom";
-import { Route } from "react-router";
 import { Link } from "react-router-dom";
-import Home from "../../pages/Home/Home";
-import About from "../../pages/About/About";
-import Catalog from "../../pages/Catalog/Catalog";
+import { animation } from "../../helpers/animePage";
 
-const Header = ({back}) => {
 
+
+const Header = ({}) => {
+  const [backHeader, setBackHeader] = useState(true);
+  const myMenu = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollListner = () => {
+      const winTop = animation.anime();
+      var headerTop = myMenu.current?.offsetTop;
+      window.scrollY;
+      if (window.scrollY > 0) {
+        setBackHeader(false);
+      }
+      if (window.scrollY === 0) {
+        setBackHeader(true);
+      }
+    };
+    window.addEventListener("scroll", scrollListner);
+    return () => {
+      window.removeEventListener("scroll", scrollListner);
+    };
+  }, []);
 
   return (
-    <S.Header className={back}>
+    <S.Header back={backHeader} ref={myMenu}>
       <div className="logo">
         <Link to="madrymoda/">
           <img src={logo} alt="" />
