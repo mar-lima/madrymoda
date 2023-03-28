@@ -11,6 +11,7 @@ import Catalog from "./pages/Catalog/Catalog";
 import Contact from "./pages/Contact/Contact";
 
 import { RxDoubleArrowUp } from "react-icons/all";
+import { routesConfig } from "./routes/routsConfig";
 
 function App() {
   const appref = useRef<HTMLDivElement>(null);
@@ -56,14 +57,10 @@ function App() {
     <S.AppContainer id="element-top" arrow={arrowTop} ref={appref}>
       <Header />
       <S.Container>
-        <h1>Inicio</h1>
         <Routes>
-          <Route path="madrymoda/" element={<Home />} />
-          <Route path="madrymoda/sobre" element={<About />} />
-          <Route path="madrymoda/catalogo" element={<Catalog />} />
-          <Route path="madrymoda/catalogo" element={<Catalog />} />
-          <Route path="madrymoda/contato" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          {routesConfig.map((route, index)=>(
+            <Route key={index} path={route.path} element={route.element()} />
+          ))}
         </Routes>
         <div className="bloco">b1</div>
         <div className="bloco">b2</div>
