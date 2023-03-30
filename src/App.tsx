@@ -57,13 +57,13 @@ function App() {
     <S.AppContainer id="element-top" arrow={arrowTop} ref={appref}>
       <Header />
       <S.Container>
-        <HashRouter>
+        
           <Routes>
             {routesConfig.map((route, index) => (
               <Route key={index} path={route.path} element={route.element()} />
             ))}
           </Routes>
-        </HashRouter>
+        
         <div className="bloco">b1</div>
         <div className="bloco">b2</div>
         <div className="bloco">b3</div>
