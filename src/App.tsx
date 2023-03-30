@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as S from "./App,styled";
 import Header from "./Components/Header/Header";
-import { Routes } from "react-router-dom";
+import { HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router";
 
 import Home from "./pages/Home/Home";
@@ -57,11 +57,13 @@ function App() {
     <S.AppContainer id="element-top" arrow={arrowTop} ref={appref}>
       <Header />
       <S.Container>
-        <Routes>
-          {routesConfig.map((route, index)=>(
-            <Route key={index} path={route.path} element={route.element()} />
-          ))}
-        </Routes>
+        <HashRouter>
+          <Routes>
+            {routesConfig.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element()} />
+            ))}
+          </Routes>
+        </HashRouter>
         <div className="bloco">b1</div>
         <div className="bloco">b2</div>
         <div className="bloco">b3</div>
