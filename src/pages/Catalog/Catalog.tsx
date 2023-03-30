@@ -7,60 +7,20 @@ import {
   MdOutlineKeyboardDoubleArrowLeft,
   MdOutlineKeyboardDoubleArrowRight,
 } from "react-icons/md";
+import { model2 } from "../../assets/assetsArray/code02";
+import Gallery from "../../helpers/galery/Galery";
 const Catalog = () => {
   const [scrollX, setScrollX] = useState(0);
   const [lengImg, setLengImg] = useState(model1.length * 250);
-  const handleNextClick = () => {
-    let x = scrollX - 250;
-    if (x <= model1.length * 250 * -1) {
-      x = 0;
-    }
-    console.log(x);
 
-    setScrollX((props) => (props = x));
-  };
-  const handlePrevClick = () => {
-    let x = scrollX + 250;
-    if (x > 0) {
-      x = model1.length * 250 * -1;
-    }
-    console.log(x);
-
-    setScrollX((props) => (props = x));
-    setScrollX((props) => props + 250);
-  };
+ 
 
   return (
     <S.CatalogSection>
       <h1>Galeria</h1>
       <S.Container>
-        <S.GaleryContainer id="galeria">
-          <S.Prev onClick={handlePrevClick} id="prev">
-            <MdOutlineKeyboardDoubleArrowLeft />
-          </S.Prev>
-
-          <S.Next onClick={handleNextClick} id="next">
-            <MdOutlineKeyboardDoubleArrowRight />
-          </S.Next>
-          <S.BoxContainer wid={lengImg} move={scrollX}>
-            {model1.map((item) => (
-              <div className="img-box" key={item.id}>
-                {" "}
-                <img src={item.url} alt="" />{" "}
-              </div>
-            ))}
-          </S.BoxContainer>
-        </S.GaleryContainer>
-
-        <S.GaleryContainer id="galeria">
-          <div className="box-container">
-            {model1.map((item) => (
-              <div className="img-box" key={item.id}>
-                <img src={item.url} alt="" />
-              </div>
-            ))}
-          </div>
-        </S.GaleryContainer>
+        <Gallery images={model1} />
+        <Gallery images={model2} />
       </S.Container>
     </S.CatalogSection>
   );
