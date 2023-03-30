@@ -2,7 +2,7 @@
   "name": "my-site",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://mar-lima.github.io/my-site/",
+  "homepage": "https://mar-lima.github.io/madrymoda/",
   "type": "module",
   "scripts": {
     "dev": "vite",
