@@ -12,6 +12,7 @@ import Contact from "./pages/Contact/Contact";
 
 import { RxDoubleArrowUp } from "react-icons/all";
 import { routesConfig } from "./routes/routsConfig";
+import TypeWriter from "./Components/Typewriter/Typewriter";
 
 function App() {
   const appref = useRef<HTMLDivElement>(null);
@@ -63,7 +64,7 @@ function App() {
               <Route key={index} path={route.path} element={route.element()} />
             ))}
           </Routes>
-        
+       
         <div className="bloco">b1</div>
         <div className="bloco">b2</div>
         <div className="bloco">b3</div>
