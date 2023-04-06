@@ -30,7 +30,7 @@ export const Container = styled.div`
   justify-content: center;
 
   h1 {
-    color: ${(props) => props.theme.colors.pink};
+    color: ${(props) => props.theme.colors.black};
     padding-bottom: 50px;
     font-weight: bold;
     transition: all ease-in-out 0.3s;
@@ -49,7 +49,7 @@ export const Container = styled.div`
   }
 
   span {
-    /* background-color: antiquewhite; */
+    color: ${(props) => props.theme.colors.grayPrimary};
     width: 80%;
     text-align: start;
     font-size: 32px;

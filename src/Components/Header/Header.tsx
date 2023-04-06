@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
-import logo from "../../assets/Group4.png";
+import logo from "../../assets/logo.png";
 
 import { Link } from "react-router-dom";
 import { animation } from "../../helpers/animePage";

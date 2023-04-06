@@ -19,9 +19,9 @@ export const Header = styled.div<headerMenu>`
   /* opacity: 0; */
   .logo {
     display: flex;
-    width: 50px;
+    width: 100px;
     border-radius: 100%;
-    box-shadow: 0px 0px 4px 2px #d1345b, 0px 0px 3px 1px #fff;
+    
     cursor: pointer;
   }
   img {
