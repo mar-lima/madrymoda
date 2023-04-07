@@ -49,7 +49,7 @@ export const Arrow = styled.div<arrowtop>`
   display: flex;
   border-radius: 10px;
   padding: 7px;
-  transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.3s;
   background-color: ${(prop) => prop.theme.colors.blue};
   color: ${(prop) => prop.theme.colors.graySecundary};
   cursor: pointer;
@@ -70,10 +70,10 @@ export const Arrow = styled.div<arrowtop>`
     stroke-width: 2px;
     stroke: ${(props) => props.theme.colors.graySecundary};
     margin-right: 4px;
-    transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.3s;
   }
   h5 {
-    transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.3s;
   }
 `;
 
