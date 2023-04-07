@@ -15,12 +15,9 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    color: ${props => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
     background-color: ${(props) => props.theme.colors.white}; 
-    
-    width: 100%;
     margin: 0 auto;
-    
 
     }
 

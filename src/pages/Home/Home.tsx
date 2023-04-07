@@ -3,7 +3,6 @@ import backImg from "../../assets/backImage.png";
 import * as S from "./styles";
 import { animation } from "../../helpers/animePage";
 
-
 const Home = () => {
   const [backHeader, setBackHeader] = useState(false);
   const animeRef = useRef<HTMLDivElement>(null);
@@ -12,18 +11,13 @@ const Home = () => {
     const scrollListner = () => {
       const winTop = animation.anime();
       const headerTop = animeRef.current?.offsetTop ?? 0;
-      
-      if(winTop > headerTop){
-        setBackHeader(true)
-        console.log(backHeader)
-      }
-      else{
-        setBackHeader(false)
-      }
 
-      
-      console.log(headerTop);
-      console.log(winTop);
+      if (window.scrollY > 0) {
+        setBackHeader(true);
+        console.log(backHeader);
+      } else {
+        setBackHeader(false);
+      }
     };
     window.addEventListener("scroll", scrollListner);
     return () => {
@@ -34,11 +28,8 @@ const Home = () => {
   return (
     <S.Section>
       <S.Container>
-        <div className="img">
-          <div className="welcome">
-            <h1>Bem-vindo(a) à Madry Moda!</h1>
-          </div>
-          <img src={backImg} alt="" />
+        <div className="welcome">
+          <h1>Bem-vindo(a) à Madry Moda!</h1>
         </div>
 
         <S.AnimeText back={backHeader} ref={animeRef}>

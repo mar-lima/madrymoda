@@ -1,39 +1,59 @@
 import styled from "styled-components";
+import backImg from "../../assets/backImage.png";
 
 export const Section = styled.div`
+  padding-top: 150px;
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+
+  
 `;
 
 export const Container = styled.div`
+  padding-bottom: 10px;
   width: 100%;
-  position: relative;
+  height: 100vh;
   display: flex;
   align-items: center;
-  .img {
+  justify-content: space-around;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-image: url(${backImg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  .welcome {
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  img {
-    width: 100%;
-  }
-
-  .welcome {
-    width: 600px;
-    height: 200px;
-    position: absolute;
+    max-width: 600px;
+    height: 150px;
     background-color: rgb(249 250 250 / 45%);
     box-shadow: 0px 0px 3px 6px rgb(249 250 250 /45%);
-    top: 30%;
-    left: 24%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .welcome {
+      max-width: 450px;
+      height: 100px;
+    }
+    .welcome h1 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 650px){
+    .welcome {
+      max-width: 350px;
+      height: 80px;
+    }
+    .welcome h1 {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -51,12 +71,31 @@ export const AnimeText = styled.div<headerMenu>`
   justify-content: center;
   width: 100%;
   max-width: 800px;
-  position: absolute;
-  top: 85%;
-  /* left: 17%; */
-  left: ${(props) => (props.back ? "17%" : "-200%")};
+  /* position:${(props) => (props.back ? "relative" : "static")}; */
+  position: relative;
+  top: 12%;
+  left: ${(props) => (props.back ? "0%" : "-200%")};
   transition: all ease-in-out 1.5s;
   span {
     font-size: 32px;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 600px;
+
+    span {
+      padding: 5px;
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 650px){
+    max-width: 400px;
+
+span {
+  padding: 5px;
+  font-size: 16px;
+}
   }
 `;

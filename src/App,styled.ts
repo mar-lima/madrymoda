@@ -38,6 +38,7 @@ export const Container = styled.div`
   .bloco {
     height: 100vh;
     width: 100%;
+    /* background-color: bisque; */
   }
 `;
 
