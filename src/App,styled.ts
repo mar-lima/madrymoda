@@ -26,7 +26,7 @@ export const AppContainer = styled.div<arrowtop>`
   flex-direction: column;
 `;
 export const Container = styled.div`
-  margin-top: 200px;
+  margin-top: 100px;
   width: 100%;
   height: 100%;
   max-width: 1200px;
@@ -44,20 +44,36 @@ export const Container = styled.div`
 export const Arrow = styled.div<arrowtop>`
   position: fixed;
   top: 80vh;
-  left: ${(props) => (props.arrow ? "15px" : "-50px")};
-  border: 4px solid ${(props) => props.theme.colors.blue};
+  right: ${(props) => (props.arrow ? "15px" : "-150px")};
+  /* border: 4px solid ${(props) => props.theme.colors.blue}; */
   display: flex;
-  border-radius: 100%;
+  border-radius: 10px;
   padding: 7px;
   transition: all ease-in-out 0.4s;
+  background-color: ${(prop) => prop.theme.colors.blue};
+  color: ${(prop) => prop.theme.colors.graySecundary};
   cursor: pointer;
-  animation: ${props => props.icon ? blinkingAnimation : null} 1s linear infinite;
 
-  path,
+  &:hover {
+    background-color: ${(props) => props.theme.colors.graySecundary};
+    svg {
+      fill: ${(props) => props.theme.colors.blue};
+      stroke: ${(prop) => prop.theme.colors.blue};
+    }
+    h5 {
+      color: ${(prop) => prop.theme.colors.blue};
+    }
+  }
+
   svg {
-    fill: ${(props) => props.theme.colors.blue};
+    fill: ${(props) => props.theme.colors.graySecundary};
     stroke-width: 2px;
-    stroke: ${(props) => props.theme.colors.blue};
+    stroke: ${(props) => props.theme.colors.graySecundary};
+    margin-right: 4px;
+    transition: all ease-in-out 0.4s;
+  }
+  h5 {
+    transition: all ease-in-out 0.4s;
   }
 `;
 

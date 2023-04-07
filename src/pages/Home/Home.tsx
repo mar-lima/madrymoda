@@ -1,55 +1,54 @@
-import React, { useState, useEffect } from "react";
-import TypeWriter from "../../Components/Typewriter/Typewriter";
+import React, { useState, useEffect, useRef } from "react";
+import backImg from "../../assets/backImage.png";
+import * as S from "./styles";
+import { animation } from "../../helpers/animePage";
+
 
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [localStorageUpdated, setLocalStorageUpdated] = useState(false);
+  const [backHeader, setBackHeader] = useState(false);
+  const animeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const hasRun = localStorage.getItem("hasRun") === "true";
-    if (hasRun) {
-      setCurrentIndex(typewriters.length);
-    } else {
-      localStorage.setItem("hasRun", "true");
-    }
+    const scrollListner = () => {
+      const winTop = animation.anime();
+      const headerTop = animeRef.current?.offsetTop ?? 0;
+      
+      if(winTop > headerTop){
+        setBackHeader(true)
+        console.log(backHeader)
+      }
+      else{
+        setBackHeader(false)
+      }
 
-    if (localStorage.getItem("hasRun") === "0") {
-      setLocalStorageUpdated(true);
-    }
+      
+      console.log(headerTop);
+      console.log(winTop);
+    };
+    window.addEventListener("scroll", scrollListner);
+    return () => {
+      window.removeEventListener("scroll", scrollListner);
+    };
   }, []);
 
-  useEffect(() => {
-    if (localStorageUpdated) {
-      setCurrentIndex(0);
-    }
-  }, [localStorageUpdated]);
-
-  const typewriters = [
-    {
-      text: "Bem-vinda à Madry Moda!",
-      speed: 120,
-      tag: "h1",
-      onComplete: () => {
-        setCurrentIndex(currentIndex + 1);
-        localStorage.setItem("hasRun", "true");
-      },
-    },
-    {
-      text: "Somos uma empresa especializada em roupas de dormir femininas, oferecendo uma variedade de opções para o seu conforto e estilo.",
-      speed: 60,
-      tag: "span",
-      onComplete: () => setCurrentIndex(currentIndex + 1),
-    },
-  ];
-
   return (
-    <>
-      {typewriters.map((typewriter, index) =>
-        index <= currentIndex ? (
-          <TypeWriter key={index} {...typewriter} />
-        ) : null
-      )}
-    </>
+    <S.Section>
+      <S.Container>
+        <div className="img">
+          <div className="welcome">
+            <h1>Bem-vindo(a) à Madry Moda!</h1>
+          </div>
+          <img src={backImg} alt="" />
+        </div>
+
+        <S.AnimeText back={backHeader} ref={animeRef}>
+          <span>
+            "Somos uma empresa especializada em roupas de dormir femininas,
+            oferecendo uma variedade de opções para o seu conforto e estilo."
+          </span>
+        </S.AnimeText>
+      </S.Container>
+    </S.Section>
   );
 };
 

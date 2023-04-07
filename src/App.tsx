@@ -36,16 +36,16 @@ function App() {
   }, []);
 
   //para controllar a animaçao da flecha
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (arrowTop) {
-        setShowIcon((prev) => !prev);
-      } else {
-        setShowIcon(false);
-      }
-    }, 900);
-    return () => clearInterval(intervalId);
-  }, [arrowTop]);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     if (arrowTop) {
+  //       setShowIcon((prev) => !prev);
+  //     } else {
+  //       setShowIcon(false);
+  //     }
+  //   }, 9000);
+  //   return () => clearInterval(intervalId);
+  // }, [arrowTop]);
 
   //função com useref para voltar ao topo
   const handleClickTop = () => {
@@ -75,6 +75,7 @@ function App() {
         onClick={handleClickTop}
         icon={showIcon}>
         <RxDoubleArrowUp />
+        <h5>Voltar ao topo</h5>
       </S.Arrow>
     </S.AppContainer>
   );
