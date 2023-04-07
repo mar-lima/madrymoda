@@ -13,6 +13,7 @@ import Contact from "./pages/Contact/Contact";
 import { RxDoubleArrowUp } from "react-icons/all";
 import { routesConfig } from "./routes/routsConfig";
 import TypeWriter from "./Components/Typewriter/Typewriter";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const appref = useRef<HTMLDivElement>(null);
@@ -58,16 +59,11 @@ function App() {
     <S.AppContainer id="element-top" arrow={arrowTop} ref={appref}>
       <Header />
       <S.Container>
-        
-          <Routes>
-            {routesConfig.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element()} />
-            ))}
-          </Routes>
-       
-        <div className="bloco">b1</div>
-        <div className="bloco">b2</div>
-        <div className="bloco">b3</div>
+        <Routes>
+          {routesConfig.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element()} />
+          ))}
+        </Routes>
       </S.Container>
       <S.Arrow
         id="arrow"
@@ -77,6 +73,8 @@ function App() {
         <RxDoubleArrowUp />
         <h5>Voltar ao topo</h5>
       </S.Arrow>
+
+      <Footer />
     </S.AppContainer>
   );
 }
