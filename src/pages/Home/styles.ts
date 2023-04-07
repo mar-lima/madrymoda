@@ -2,14 +2,16 @@ import styled from "styled-components";
 import backImg from "../../assets/backImage.png";
 
 export const Section = styled.div`
-  padding-top: 150px;
+  padding-top: 120px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  
+  @media (max-width: 650px) {
+    padding-top: 80px;
+  }
 `;
 
 export const Container = styled.div`
@@ -46,7 +48,9 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 650px){
+  @media (max-width: 650px) {
+    background-size: cover;
+    background-position: right;
     .welcome {
       max-width: 350px;
       height: 80px;
@@ -55,6 +59,15 @@ export const Container = styled.div`
       font-size: 22px;
     }
   }
+  /* @media (max-width: 650px){
+    .welcome {
+      max-width: 350px;
+      height: 80px;
+    }
+    .welcome h1 {
+      font-size: 22px;
+    }
+  } */
 `;
 
 type headerMenu = {
@@ -90,12 +103,12 @@ export const AnimeText = styled.div<headerMenu>`
     }
   }
 
-  @media (max-width: 650px){
+  @media (max-width: 650px) {
     max-width: 400px;
 
-span {
-  padding: 5px;
-  font-size: 16px;
-}
+    span {
+      padding: 5px;
+      font-size: 16px;
+    }
   }
 `;
