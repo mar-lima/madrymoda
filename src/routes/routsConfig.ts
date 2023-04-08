@@ -6,19 +6,19 @@ import NotFound from "../pages/NotFound";
 
 export const routesConfig = [
   {
-    path: "/",
+    path: "madrymoda/",
     element: Home,
   },
   {
-    path: "/sobre",
+    path: "madrymoda/sobre",
     element: About,
   },
   {
-    path: "/catalogo",
+    path: "madrymoda/catalogo",
     element: Catalog,
   },
   {
-    path: "/contato",
+    path: "madrymoda/contato",
     element: Contact,
   },
   {
