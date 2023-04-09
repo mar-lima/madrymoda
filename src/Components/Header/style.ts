@@ -35,7 +35,9 @@ export const Header = styled.div<headerMenu>`
   @media (max-width: 750px) {
     height: 100vh;
     align-items: flex-start;
+    position: static;
     .logo {
+      position: static;
       margin-top: 30px;
       width: 200px;
       /* display: none; */
