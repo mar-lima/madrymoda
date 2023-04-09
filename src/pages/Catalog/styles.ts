@@ -7,7 +7,7 @@ export const CatalogSection = styled.div`
   justify-content: space-around;
   width: 100%;
   height: 100vh;
-  /* background-color: black; */
+  z-index: -1;
 `;
 export const Container = styled.div`
   width: 100%;
@@ -36,8 +36,6 @@ export const GaleryContainer = styled.div`
   .box-container {
     display: flex;
     flex-wrap: nowrap;
-    /* width: 200vh; */
-    /* margin-left: -300px; */
   }
   .img-box {
     display: flex;

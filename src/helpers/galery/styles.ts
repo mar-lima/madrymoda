@@ -7,7 +7,6 @@ export const CatalogSection = styled.div`
   justify-content: space-around;
   width: 100%;
   height: 100vh;
-  /* background-color: black; */
 `;
 export const Container = styled.div`
   width: 100%;
@@ -36,20 +35,17 @@ export const GaleryContainer = styled.div`
   .box-container {
     display: flex;
     flex-wrap: nowrap;
-    /* width: 200vh; */
-    /* margin-left: -300px; */
   }
   .img-box {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: ${(props) => props.theme.colors.white};
-    /* margin: 0 10px; */
+
     width: 250px;
     cursor: pointer;
   }
   .img-box img {
-    /* width: 100%; */
     max-width: 250px;
     max-height: 250px;
   }

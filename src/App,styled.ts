@@ -46,13 +46,13 @@ export const Arrow = styled.div<arrowtop>`
   position: fixed;
   top: 80vh;
   right: ${(props) => (props.arrow ? "15px" : "-150px")};
-  /* border: 4px solid ${(props) => props.theme.colors.blue}; */
   display: flex;
   border-radius: 10px;
   padding: 7px;
   transition: all ease-in-out 0.3s;
   background-color: ${(prop) => prop.theme.colors.blue};
   color: ${(prop) => prop.theme.colors.graySecundary};
+
   cursor: pointer;
 
   &:hover {
