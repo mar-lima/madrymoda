@@ -36,7 +36,9 @@ export const Header = styled.div<headerMenu>`
     /* height: 100vh; */
     position: static;
     align-items: flex-start;
+    position: static;
     .logo {
+      position: static;
       margin-top: 30px;
       width: 200px;
       /* display: none; */
