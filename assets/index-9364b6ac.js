@@ -353,7 +353,7 @@ Error generating stack: `+o.message+`
   position: relative;
   top: 12%;
   left: ${e=>e.back?"0%":"-200%"};
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.5s;
   span {
     font-size: 32px;
     text-align: center;
