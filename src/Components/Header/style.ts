@@ -95,8 +95,9 @@ export const MenuBox = styled.div`
 export const Burger = styled.div<headerMenu>`
   display: none;
   @media (max-width: 750px) {
+
     z-index: 999;
-    position: absolute;
+    position: fixed;
     left: ${(props) => (props.open ? "85vw" : "20px")};
     top: 50px;
     width: 40px;
