@@ -14,7 +14,6 @@ const Home = () => {
 
       if (window.scrollY > 0) {
         setBackHeader(true);
-        console.log(backHeader);
       } else {
         setBackHeader(false);
       }

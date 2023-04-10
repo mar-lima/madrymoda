@@ -6,13 +6,13 @@ import {
 } from "react-icons/md";
 
 interface Image {
-    id: number;
-    url: string;
-  }
-  
-  interface GalleryProps {
-    images: Image[];
-  }
+  id: number;
+  url: string;
+}
+
+interface GalleryProps {
+  images: Image[];
+}
 
 const Gallery = ({ images }: GalleryProps) => {
   const [scrollX, setScrollX] = useState(0);
@@ -24,37 +24,15 @@ const Gallery = ({ images }: GalleryProps) => {
     if (x <= images.length * 250 * -1) {
       x = 0;
     }
-    console.log(x);
-
     setScrollX((props) => (props = x));
   };
-
   const handlePrevClick = () => {
     let x = scrollX + 250;
     if (x > 0) {
       x = images.length * 250 * -1;
     }
-    console.log(x);
-
     setScrollX((props) => (props = x));
     setScrollX((props) => props + 250);
-  };
-
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    setStartTouch(event.touches[0].clientX);
-  };
-
-  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    const touchMove = event.touches[0].clientX;
-    const distance = startTouch - touchMove;
-
-    setScrollX((prevScrollX) => prevScrollX - distance);
-    setStartTouch(touchMove);
-  };
-
-  const handleTouchEnd = () => {
-    const snapToImage = Math.round(scrollX / 250) * 250;
-    setScrollX(snapToImage);
   };
 
   return (
@@ -66,18 +44,11 @@ const Gallery = ({ images }: GalleryProps) => {
       <S.Next onClick={handleNextClick} id="next">
         <MdOutlineKeyboardDoubleArrowRight />
       </S.Next>
-      <S.BoxContainer
-       wid={lengImg} 
-       move={scrollX}
-       onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-       >
-
+      <S.BoxContainer wid={lengImg} move={scrollX}>
         {images.map((item) => (
-          <div className="img-box" key={item.id}>
+          <S.ImgBox key={item.id}>
             <img src={item.url} alt="" />
-          </div>
+          </S.ImgBox>
         ))}
       </S.BoxContainer>
     </S.GaleryContainer>

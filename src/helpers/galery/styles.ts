@@ -1,26 +1,25 @@
 import styled from "styled-components";
 
-export const CatalogSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 100vh;
-`;
-export const Container = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-around;
-`;
+// export const CatalogSection = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 100%;
+//   height: 100vh;
+// `;
+// export const Container = styled.div`
+//   width: 100%;
+//   height: auto;
+//   display: flex;
+//   /* flex-wrap: nowrap; */
+//   align-items: center;
+//   justify-content: space-around;
+// `;
 export const GaleryContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 250px;
-  background-color: azure;
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -30,27 +29,6 @@ export const GaleryContainer = styled.div`
 
   &:hover {
     transform: scale(1.1);
-  }
-
-  .box-container {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  .img-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(props) => props.theme.colors.white};
-
-    width: 250px;
-    cursor: pointer;
-  }
-  .img-box img {
-    max-width: 250px;
-    max-height: 250px;
-  }
-
-  &:hover {
     #next,
     #prev {
       display: flex;
@@ -62,6 +40,28 @@ export const GaleryContainer = styled.div`
   svg {
     width: 40px;
     height: 40px;
+  }
+
+  @media (max-width: 750px) {
+  }
+`;
+
+export const ImgBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.graySecundary};
+  width: 250px;
+  /* height: 250px; */
+  cursor: pointer;
+
+  img {
+    height: 100%;
+    max-height: 250px;
+  }
+
+  @media (max-width: 750px) {
+    margin-top: 50px;
   }
 `;
 

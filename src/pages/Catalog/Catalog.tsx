@@ -17,7 +17,6 @@ const Catalog = () => {
 
   return (
     <S.CatalogSection>
-      <h1>Galeria</h1>
       <S.Container>
         <Gallery images={model1} />
         <Gallery images={model2} />

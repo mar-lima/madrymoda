@@ -15,6 +15,11 @@ export const Container = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
 `;
 export const GaleryContainer = styled.div`
   position: relative;
