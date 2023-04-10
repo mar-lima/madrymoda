@@ -7,7 +7,6 @@ export const CatalogSection = styled.div`
   justify-content: space-around;
   width: 100%;
   height: 100vh;
-  z-index: -1;
 `;
 export const Container = styled.div`
   width: 100%;

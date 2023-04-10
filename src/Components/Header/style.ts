@@ -6,7 +6,7 @@ type headerMenu = {
 };
 
 export const Header = styled.div<headerMenu>`
-  /* z-index: 999; */
+  z-index: 999;
   width: 100%;
   height: 80px;
   display: flex;
@@ -33,7 +33,8 @@ export const Header = styled.div<headerMenu>`
   }
 
   @media (max-width: 750px) {
-    height: 100vh;
+    /* height: 100vh; */
+    position: static;
     align-items: flex-start;
     .logo {
       margin-top: 30px;

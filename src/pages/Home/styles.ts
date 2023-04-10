@@ -9,8 +9,8 @@ export const Section = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  @media (max-width: 650px) {
-    padding-top: 80px;
+  @media (max-width: 750px) {
+    padding-top: 0px;
   }
 `;
 
